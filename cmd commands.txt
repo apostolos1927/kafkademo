@@ -1,0 +1,18 @@
+
+C:\kafka_2.12-3.5.1\bin\windows\zookeeper-server-start.bat C:\kafka_2.12-3.5.1\config\zookeeper.properties
+
+C:\kafka_2.12-3.5.1\bin\windows\kafka-server-start.bat C:\kafka_2.12-3.5.1\config\server.properties
+
+C:\kafka_2.12-3.5.1\bin\windows\kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic apostolos
+
+C:\kafka_2.12-3.5.1\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --list
+
+C:\kafka_2.12-3.5.1\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic apostolos
+
+C:\kafka_2.12-3.5.1\bin\windows\kafka-console-consumer.bat --topic apostolos --bootstrap-server localhost:9092 --from-beginning
+
+C:\kafka_2.12-3.5.1\bin\windows\kafka-topics.bat --bootstrap-server localhost:9092 --delete --topic apostolos 
+
+C:\kafka_2.12-3.5.1\bin\windows\zookeeper-server-stop.bat .\config\zookeeper.properties
+
+C:\kafka_2.12-3.5.1\bin\windows\kafka-server-stop.bat .\config\server.properties
